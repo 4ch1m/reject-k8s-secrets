@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<atlassian-plugin
+        name="${project.name}"
+        key="${atlassian.plugin.key}"
+        plugins-version="2">
+
+    <plugin-info>
+        <description>${project.description}</description>
+        <version>${project.version}</version>
+        <vendor name="${project.organization.name}" url="${project.organization.url}"/>
+        <param name="plugin-icon">images/pluginIcon.png</param>
+        <param name="plugin-logo">images/pluginLogo.png</param>
+    </plugin-info>
+
+    <repository-hook
+            name="Reject-K8s-Secrets"
+            key="my-pre-receive-repository-hook"
+            class="com.foobar.reject_k8s_secrets.hook.MyPreReceiveRepositoryHook">
+        <description key="my-pre-receive-repository-hook.description">Reject-K8s-Secrets plugin/pre-receive-hook for Atlassian Bitbucket Server.</description>
+        <icon>k8s-icon.png</icon>
+    </repository-hook>
+</atlassian-plugin>
